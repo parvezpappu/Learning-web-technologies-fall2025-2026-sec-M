@@ -1,0 +1,45 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <br>
+    <label for="" id="show"></label>
+    <br>
+    <button   type="button" onclick="return validation()">submit</button>
+    </form>
+
+    <script>
+   
+    function validation(){
+         let inputId=document.getElementById("name").value;
+         let len=document.getElementById("name");
+         
+        if(inputId=="" || inputId.length<2 ){
+             document.getElementById("show").innerHTML="please Fill the name";
+
+            return false;
+        }
+
+         for(let i=0;i<inputId.length;++i){
+            let char=inputId[i];
+            if(((char>='a'&&char<='z')||(char>='A'&&char<='Z')|| char==="." || char==="-")){
+                 document.getElementById("show").innerHTML="please Enter words ";
+                return true;
+            }
+         }
+
+        
+
+
+    document.getElementById("show").innerHTML="";
+    return true;
+
+    }
+    </script>
+</body>
+</html>

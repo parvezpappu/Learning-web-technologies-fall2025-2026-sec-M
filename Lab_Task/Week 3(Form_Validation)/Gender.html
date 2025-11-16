@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <fieldset>
+     <legend>Gender</legend>
+     <br>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="gender">Male</label>
+    <input type="radio" name="gender" value="female" id="female">
+    <label for="gender">female</label>
+    <input type="radio" name="gender" value="other" id="other">
+    <label for="gender">others</label>
+    <label id="show"></label>
+    <br>
+    <br>
+    </fieldset>
+    <br>
+     <button  onclick="return validation()">Submit</button>
+     <br>
+   </form>
+     <script>
+
+        function validation(){
+            let value=document.getElementsByName("gender")
+            let checked=false;
+
+            for(let i=0;i<value.length;++i){
+                if(value[i].checked==true){
+                    checked=true;
+                    break;
+                }
+            }
+
+            if(!checked){
+                document.getElementById("show").innerHTML="please select an option"
+                return false;
+            }
+             
+             
+        }
+     </script>
+   
+    
+</body>
+</html>
