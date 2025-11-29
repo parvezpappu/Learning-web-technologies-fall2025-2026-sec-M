@@ -1,0 +1,56 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+     
+
+    <form action="" id="form">
+    <fieldset>
+        <legend>Gender</legend>
+
+        <label for="male">
+            <input type="radio" name="gender" id="male">Male
+        </label>
+
+        <label for="female">
+            <input type="radio" name="gender" id="female">Female
+        </label>
+
+        <label for="other">
+            <input type="radio" name="gender" id="other">Other
+        </label>
+    </fieldset>
+    <label for="" id="show"></label>
+    <br>
+    <button>Submit</button>
+    </form>
+   
+     <script>
+       let allInfo=document.getElementsByName("gender");
+       let formData=document.getElementById("form");
+       formData.addEventListener("submit",(e)=>{
+       // e.preventDefault();
+         let check=false;
+       for(let i=0;i<allInfo.length;++i){
+          if(allInfo[i].checked){
+            check=true;
+          }
+       }
+          if(check){
+        document.getElementById("show").innerText="only one is selected"
+       }
+       else{
+        e.preventDefault();
+       }
+       })
+       
+
+     
+     </script>
+
+
+
+</body>
+</html>

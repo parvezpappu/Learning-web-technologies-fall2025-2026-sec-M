@@ -1,0 +1,70 @@
+
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+    <fieldset>
+        <legend>Date of Birth</legend>
+        <label for="dd">dd</label>
+        <label for="mm">mm</label>
+        <label for="yyyy">yyyy</label>
+        <br>
+        <input type="text" name="" id="dd" style="height: 20px; width: 20px;">/
+        <input type="text" name="" id="mm" style="height: 20px; width: 20px;">/
+        <input type="text" name="" id="yyyy" style="height: 20px; width: 20px;">
+        <br><br>
+        <label for="" id="show"></label>
+        <button>submit</button>
+        
+    </fieldset>
+    </form>
+
+    <script>
+        let formId=document.getElementById("form");
+        let ddId=document.getElementById("dd");
+        let mmId=document.getElementById("mm");
+        let yyId=document.getElementById("yyyy");
+        let showMessage=document.getElementById("show")
+        formId.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            if(ddId.value.length<=0 || mmId.value.length<=0|| yyId.value.length<=0){
+             showMessage.innerText="it Can not Be empty";
+             return;
+            }
+
+            const ddNumber=ddId.value.trim();
+            const mmNumber=mmId.value.trim();
+            const yyNumber=yyId.value.trim();
+
+            const convertDd=Number(ddNumber)
+            const convertMm=Number(mmNumber);
+            const convertYy=Number(yyNumber);
+
+            if(isNaN(convertDd)||isNaN(convertMm)|| isNaN(convertYy)){
+                showMessage.innerText="input must be a number"
+            }
+
+
+            if(convertDd<1 || convertDd>31){
+                 showMessage.innerText="Day must be between 1 and 31"
+            }
+
+            if(convertMm<1 || convertMm>12){
+                showMessage.innerText="Month must be between 1 and 12"
+            }
+
+            if(y<1900 || y>2016){
+                showMessage.innerText="Year must be between 1900 and 2016"
+            }
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>

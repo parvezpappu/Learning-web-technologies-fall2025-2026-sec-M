@@ -1,0 +1,36 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+  
+    <form action="" id="submit">
+        <label for="email">Email</label>
+        <br>
+        <br>
+        <input type="email" name="" id="eml"> 
+        <i title="hint: sample@example.com" style="height:20px; display: inline-block; width: 20px; border:1px solid blue ; padding: 1px; margin-left:5px; text-align: center; cursor: pointer;">i    
+        </i>
+     <br>
+        <label for="" id="showMessage"></label>
+        <br>
+        <button>submit</button>
+    </form>
+    <script>
+
+        let formId=document.getElementById("submit");
+        let show=document.getElementById("showMessage");
+        let inputtext=document.getElementById("eml");
+
+        formId.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            if(inputtext.value.length <=0){
+                shwo.innerText="please Enter Somethng..it can't be Empty"
+            }
+        })
+
+
+    </script>
+</body>
+</html> 

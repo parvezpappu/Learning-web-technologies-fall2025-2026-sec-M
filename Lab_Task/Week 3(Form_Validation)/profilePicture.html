@@ -1,0 +1,52 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" id="forrm">
+        <fieldset>
+            <legend>Profile Picture</legend>
+
+            <label for="user">User Id</label>
+            <input type="text" name="Pic" id="txt">
+            <br>
+            <label for="Pic">Picture</label>
+            <input type="file" name="Pic" id="pc">
+            <br>
+            <label for="" id="show"></label>
+            <br>
+            <button>Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        let formId=document.getElementById("forrm");
+        let showMessage=document.getElementById("show");
+        let inputType=document.getElementById("txt");
+        let pic=document.getElementById("pc");
+
+        
+
+        formId.addEventListener("submit",(e)=>{
+            let convertNumber=inputType.value.trim();
+            let final=Number(convertNumber);
+            if(inputType.value==="" || final<=0){
+                e.preventDefault();
+                showMessage.innerText=" Id cann not be empty";
+            }
+
+            if(pic.value===""){
+                e.preventDefault();
+                showMessage.innerText="pic cannot be Empty";
+            }
+
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

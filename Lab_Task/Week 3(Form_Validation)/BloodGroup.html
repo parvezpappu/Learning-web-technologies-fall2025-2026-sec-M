@@ -1,0 +1,40 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="forrm">
+     <label for="">Blood Group</label>
+     <select name="" id="sl">
+        <option value="">Select</option>
+        <option value="A+">A+</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="A-">A-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+     </select>
+     <label for="" id="show"></label>
+     <br>
+     <button>submit</button>
+    </form>
+
+    <script>
+        let formId=document.getElementById("forrm");
+        let selectItem=document.getElementById("sl");
+        let showMessage=document.getElementById("show");
+
+        formId.addEventListener("submit",(e)=>{
+            
+
+            if(selectItem.value===""){
+                e.preventDefault();
+                showMessage.innerText="please select one";
+            }
+        })
+
+
+    </script>
+</body>
+</html>

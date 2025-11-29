@@ -1,0 +1,54 @@
+
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+    <fieldset>
+        <legend>Degree</legend>
+        <label for="">
+            <input type="checkbox" name="degree" id="ssc"> SSC
+        </label>
+        <label for="">
+            <input type="checkbox" name="degree" id="">HSC
+        </label>
+        <label for="">
+            <input type="checkbox" name="degree" id="">BSC
+        </label>
+    </fieldset>
+    <br>
+    <label for="" id="show"></label>
+    <br>
+    <button>Submit</button>
+    </form>
+
+
+    <script>
+        let formId=document.getElementById("form");
+        let value=document.getElementsByName("degree");
+        let showMessage=document.getElementById("show")
+        formId.addEventListener("submit",(e)=>{
+           
+      
+            let check=false;
+            for(let i=0;i<value.length;++i){
+                if(value[i].checked){
+                    check=true;
+                }
+            }
+
+            if(!check){ 
+                e.preventDefault();
+              showMessage.innerText="at leas on should be select";
+               
+            }
+
+
+        })
+    </script>
+    
+
+</body>
+</html>
